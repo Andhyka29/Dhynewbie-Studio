@@ -1,0 +1,81 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height:1.6;
+    color:#333;
+    background: url('../images/wallpaper4.jpeg') no-repeat center center/cover;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+  }
+
+  .menu-btn span {
+    display: block;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #444;
+    padding-top: 60px;
+    transition: 0.3s;
+  }
+
+  nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background 0.3s;
+  }
+
+  nav a:hover {
+    color: rgb(197, 5, 5);
+    background: #323030;
+  }
+
+  #menu-toggle:checked ~ nav {
+    left: 0;
+  }
+
+  #menu-toggle:checked + .menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  #menu-toggle:checked + .menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #menu-toggle:checked + .menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }

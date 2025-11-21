@@ -1,0 +1,61 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height:1.6;
+    color:#333;
+    background: url('../images/wallpaper4.jpeg') no-repeat center center/cover;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .contact h1 {
+    text-align: center;
+    margin: 12px 12px 12px 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+  }
+
+  .contact-box {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 2rem 3rem;
+    max-width: 700px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+
+  .contact-box img {
+    width: 120px;              
+    height: 95px; 
+    object-fit: cover;                
+  }
+
+  .contact a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+  }
+
+  .contact a:hover {
+    color: #e93a3a;
+    transition: 0.7s;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
