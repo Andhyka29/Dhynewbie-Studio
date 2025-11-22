@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Bentuk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center">
+    <!-- Header -->
+    <div class="fixed bg-slate-800 w-full h-16 mx-auto flex justify-between items-center z-10">
+        <h1 class="text-2xl font-bold p-8">Kalkulator Bentuk</h1>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-[250px_1fr] w-full mt-16">
+        <!-- Sidebar -->
+        <aside class="bg-gray-700 p-1 h-auto w-full md:w-auto top-16 left-0 md:relative">
+            <nav class="w-full">
+                <ul class="space-y-2">
+                    <li><button id="tombolLuas" class="block w-full p-4 mt-5 text-white hover:bg-white hover:text-slate-900 transition-all duration-500"> Luas </button></li>
+                    <li><button id="tombolKeliling" class="block w-full p-4 mt-5 text-white hover:bg-white hover:text-slate-900 transition-all duration-500"> Keliling </button></li>
+                    <li><button id="tombolVolume" class="block w-full p-4 mt-5 text-white hover:bg-white hover:text-slate-900 transition-all duration-500"> Volume </button></li>
+                    <li><a href="data.html" class="block w-full p-4 mt-5 text-center text-white hover:bg-white hover:text-slate-900 transition-all duration-500"> Data Buku </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Konten Utama -->
+        <main id="mainContent" class="items-center justify-center text-gray-300 text-lg mt-10 p-10">
+            <div id="kontenUtama" class="text-center">
+                <h2 class="text-2xl font-bold text-indigo-400 mb-4"> Kalkulator Bentuk </h2>
+                <div class="mt-4 space-y-2">
+                    <p> Pilih jenis perhitungan dari sidebar untuk menghitung luas, keliling, atau volume berbagai bentuk. </p>
+                </div>   
+            </div>
+
+            <!-- KALKULATOR LUAS -->
+            <div id="kalkulatorLuas" class="items-center justify-center text-gray-300 text-lg mt-10 p-10 hidden">
+                <h1 class="text-center text-2xl font-bold text-teal-400 mb-4">Kalkulator Luas</h1>
+                <div class="buttonOptions flex flex-wrap justify-center gap-4 mt-6">
+                    <button id="btnLuasSegitiga" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Segitiga
+                    </button>
+
+                    <button id="btnLuasLingkaran" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Lingkaran
+                    </button>
+
+                    <button id="btnLuasPersegi" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Persegi
+                    </button>
+
+                    <button id="btnLuasPersegiPanjang" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Persegi Panjang
+                    </button>
+
+                    <button id="btnLuasJajarGenjang" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Jajar Genjang
+                    </button>
+                </div>
+
+                <div id="inputLuasSegitiga" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-teal-400 mb-4"> Hitung Luas Segitiga </h2>
+                    <p> Rumus: 1/2 × alas × tinggi </p> 
+                    <div class="mt-4 space-y-2">
+                        <input id="alasSegitiga" type="number" placeholder="Masukkan alas (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="tinggiSegitiga" type="number" placeholder="Masukkan tinggi (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungLuasSegitiga()" class="bg-teal-500 px-4 py-2 rounded hover:bg-teal-600 transition"> Hitung Luas </button>
+                        <p id="hasilLuasSegitiga" class="mt-3"></p>
+                    </div>   
+                </div>
+
+                <div id="inputLuasLingkaran" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-teal-400 mb-4"> Hitung Luas Lingkaran </h2>
+                    <p> Rumus: PI × jari x jari </p> 
+                    <div class="mt-4 space-y-2">
+                        <input id="jariJariLingkaran" type="number" placeholder="Masukkan jari-jari (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungLuasLingkaran()" class="bg-teal-500 px-4 py-2 rounded hover:bg-teal-600 transition"> Hitung Luas </button>
+                        <p id="hasilLuasLingkaran" class="mt-3"></p>
+                    </div>   
+                </div>
+
+                <div id="inputLuasPersegi" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-teal-400 mb-4"> Hitung Luas Persegi </h2>
+                    <p> Rumus: sisi x sisi </p> 
+                    <div class="mt-4 space-y-2">
+                        <input id="sisiPersegi" type="number" placeholder="Masukkan sisi (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungLuasPersegi()" class="bg-teal-500 px-4 py-2 rounded hover:bg-teal-600 transition"> Hitung Luas </button>
+                        <p id="hasilLuasPersegi" class="mt-3"></p>
+                    </div>   
+                </div>
+
+                <div id="inputLuasPersegiPanjang" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-teal-400 mb-4"> Hitung Luas Persegi Panjang </h2>
+                    <p> Rumus: panjang × lebar </p>      
+                    <div class="mt-4 space-y-2">
+                        <input id="panjangPersegiPanjang" type="number" placeholder="Masukkan panjang (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="lebarPersegiPanjang" type="number" placeholder="Masukkan lebar (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungLuasPersegiPanjang()" class="bg-teal-500 px-4 py-2 rounded hover:bg-teal-600 transition"> Hitung Luas </button>
+                        <p id="hasilLuasPersegiPanjang" class="mt-3"></p>
+                    </div>   
+                </div>
+
+                <div id="inputLuasJajarGenjang" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-teal-400 mb-4"> Hitung Luas Jajar Genjang </h2>
+                    <p> Rumus: alas × tinggi </p> 
+                    <div class="mt-4 space-y-2">
+                        <input id="alasJajarGenjang" type="number" placeholder="Masukkan alas (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="tinggiJajarGenjang" type="number" placeholder="Masukkan tinggi (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungLuasJajarGenjang()" class="bg-teal-500 px-4 py-2 rounded hover:bg-teal-600 transition"> Hitung Luas </button>
+                        <p id="hasilLuasJajarGenjang" class="mt-3"></p>
+                    </div>   
+                </div>
+            </div>
+
+            <!-- KALKULATOR KELILING -->
+            <div id="kalkulatorKeliling" class="items-center justify-center text-gray-300 text-lg mt-10 p-10 hidden">
+                <h1 class="text-center text-2xl font-bold text-lime-400 mb-4">Kalkulator Keliling</h1>
+                <div class="buttonOptions flex flex-wrap justify-center gap-4 mt-6">
+                    <button id="bttnKelilingSegitiga" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Segitiga
+                    </button>
+
+                    <button id="bttnKelilingLingkaran" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Lingkaran
+                    </button>
+
+                    <button id="bttnKelilingPersegi" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Persegi
+                    </button>
+
+                    <button id="bttnKelilingPersegiPanjang" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Persegi Panjang
+                    </button>
+
+                    <button id= "bttnKelilingJajarGenjang" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Jajar Genjang
+                    </button>
+                </div>
+
+                <div id="KelilingSegitiga" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-lime-400 mb-4">Hitung Keliling Segitiga</h2>
+                    <p>Rumus: sisi1 + sisi2 + sisi3</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="s1Segitiga" type="number" placeholder="Sisi 1 (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="s2Segitiga" type="number" placeholder="Sisi 2 (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="s3Segitiga" type="number" placeholder="Sisi 3 (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungKelilingSegitiga()" class="bg-lime-500 px-4 py-2 rounded hover:bg-lime-600 transition">Hitung</button>
+                        <p id="hasilKelilingSegitiga" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="KelilingLingkaran" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-lime-400 mb-4"> Hitung Keliling Lingkaran </h2>
+                    <p>Rumus: 2 x PI x r</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="jariLingkaran" type="number" placeholder="Jari-jari (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungKelilingLingkaran()" class="bg-lime-500 px-4 py-2 rounded hover:bg-lime-600 transition">Hitung</button>
+                        <p id="hasilKelilingLingkaran" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="KelilingPersegi" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-lime-400 mb-4"> Hitung Keliling Persegi </h2>
+                    <p>Rumus: 4 x sisi</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="s1Persegi" type="number" placeholder="Sisi (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungKelilingPersegi()" class="bg-lime-500 px-4 py-2 rounded hover:bg-lime-600 transition">Hitung</button>
+                        <p id="hasilKelilingPersegi" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="KelilingPersegiPanjang" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-lime-400 mb-4"> Hitung Keliling Persegi Panjang </h2>
+                    <p>Rumus: 2 x (panjang + lebar)</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="panjangPersegiPanjang" type="number" placeholder="Panjang (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="lebarPersegiPanjang" type="number" placeholder="Lebar (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungKelilingPersegiPanjang()" class="bg-lime-500 px-4 py-2 rounded hover:bg-lime-600 transition">Hitung</button>
+                        <p id="hasilKelilingPersegiPanjang" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="KelilingJajarGenjang" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-lime-400 mb-4"> Hitung Keliling Jajar Genjang </h2>
+                    <p>Rumus: 2 x (sisi1 + sisi2)</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="s1JajarGenjang" type="number" placeholder="Sisi 1 (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="s2JajarGenjang" type="number" placeholder="Sisi 2 (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungKelilingJajarGenjang()" class="bg-lime-500 px-4 py-2 rounded hover:bg-lime-600 transition">Hitung</button>
+                        <p id="hasilKelilingJajarGenjang" class="mt-3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KALKULATOR VOLUME -->
+            <div id="kalkulatorVolume" class="items-center justify-center text-gray-300 text-lg mt-10 p-10 hidden">
+                <h1 class="text-center text-2xl font-bold text-sky-400 mb-4">Kalkulator Volume</h1>
+                <div class="buttonOptions flex flex-wrap justify-center gap-4 mt-6">
+                    <button id="bttonVolumeSegitiga" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Segitiga
+                    </button>
+
+                    <button id="bttonVolumeBola" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Bola
+                    </button>
+
+                    <button id="bttonVolumeKubus" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Kubus
+                    </button>
+
+                    <button id="bttonVolumeBalok" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Balok
+                    </button>
+
+                    <button id="bttonVolumeTrapesium" class="bg-red-700 hover:bg-white hover:text-red-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-200 w-[30%]">
+                        Hitung Trapesium
+                    </button>
+                </div>
+
+                <div id="volumeSegitiga" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-sky-400 mb-4">Hitung Volume Prisma Segitiga</h2>
+                    <p>Rumus: (1/2 × alas × tinggi) × tinggi prisma</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="alasVolumeSegitiga" type="number" placeholder="Alas segitiga (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="tinggiVolumeSegitiga" type="number" placeholder="Tinggi segitiga (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="tinggiPrismaSegitiga" type="number" placeholder="Tinggi prisma (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungVolumeSegitiga()" class="bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition">Hitung</button>
+                        <p id="hasilVolumeSegitiga" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="volumeBola" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-sky-400 mb-4">Hitung Volume Bola</h2>
+                    <p>Rumus: (4/3) × PI × r(3)</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="jariBola" type="number" placeholder="Jari-jari Bola (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungVolumeBola()" class="bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition">Hitung</button>
+                        <p id="hasilVolumeBola" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="volumeKubus" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-sky-400 mb-4">Hitung Volume Kubus</h2>
+                    <p>Rumus: sisi × sisi × sisi</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="sisiKubus" type="number" placeholder="Sisi Kubus (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungVolumeKubus()" class="bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition">Hitung</button>
+                        <p id="hasilVolumeKubus" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="volumeBalok" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-sky-400 mb-4">Hitung Volume Balok</h2>
+                    <p>Rumus: (panjang × lebar × tinggi)</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="panjangBalok" type="number" placeholder="Panjang Balok (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="lebarBalok" type="number" placeholder="Lebar Balok (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="tinggiBalok" type="number" placeholder="Tinggi Balok (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungVolumeBalok()" class="bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition">Hitung</button>
+                        <p id="hasilVolumeBalok" class="mt-3"></p>
+                    </div>
+                </div>
+
+                <div id="volumeTrapesium" class="text-center hidden mt-12">
+                    <h2 class="text-2xl font-bold text-sky-400 mb-4">Hitung Volume Trapesium</h2>
+                    <p>Rumus: (1/2 × alas × tinggi) × tinggi trapesium</p>
+                    <div class="mt-4 space-y-2">
+                        <input id="alasTrapesium" type="number" placeholder="Alas trapesium (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="tinggiTrapesium" type="number" placeholder="Tinggi trapesium (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <input id="prismaTrapesium" type="number" placeholder="Tinggi prisma (cm)" class="p-2 rounded bg-gray-800 w-full">
+                        <button onclick="hitungVolumeTrapesium()" class="bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition">Hitung</button>
+                        <p id="hasilVolumeTrapesium" class="mt-3"></p>
+                    </div>
+                </div>            
+            </div>
+        </main>
+    </div>
+
+    <div class="footer"></div>
+
+    <script src="tugas9.js"></script>
+</body>
+</html>
+
+
