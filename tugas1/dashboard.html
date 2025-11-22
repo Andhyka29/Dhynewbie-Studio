@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+
+        <style>
+            body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;   /* untuk jarak antar baris */
+            color: #333;
+            background: linear-gradient(135deg, #5df4ff, #08469c); /* agar warnanya gradasi */
+            }
+
+            header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #700909, #df9595); /* gradasi warna */
+            }
+
+            header h1 {
+            font-size: 70px;
+            margin-bottom: 0%;   /* untuk memberi jarak ke bawah */
+            text-shadow: 1px 0px 2px rgb(248, 246, 246);   /* untuk memberi efek bayangan pada teks */
+            }
+
+            header h2 {
+            font-size: 30px;
+            margin-top: 0%;
+            }
+
+            nav {
+            display: flex;
+            justify-content: center;
+            background: #ffffffcc;
+            }
+
+            nav a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+            font-size: 18px;
+            }
+
+            nav a:hover {
+            color: #bd0c0c;
+            }
+
+            section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+            }
+
+            .card {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            }
+
+            footer {
+            text-align: center;
+            padding: 20px;
+            background: #ffffffcc;
+            margin-top: 30px;
+            }
+        
+            h2 {
+            color: aliceblue;
+            text-shadow: 0px 0px 2px rgb(0, 0, 0);
+            }
+        
+            div a{
+            text-decoration: none;
+            color: #6d0202;
+            }
+
+            p  {
+            font-size: 20px;
+            }
+
+            pre {
+            font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1><b>Welcome</b></h1>
+            <h2><i>to my website</i></h2>
+            <p>Technology Developer | Artist | Creative Thinker</p>
+        </header>
+
+        <nav>   
+            <a href="#about">About me</a>   <!-- untuk melompat ke suatu bagian -->
+            <a href="#art">Art</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="about">   <!-- tag section untuk menandai sebuah bagian -->
+            <h2>About me</h2>
+            <div class="card">
+                <p>Saya adalah seorang yang sangat menyukai teknologi dan seni, saya bercita - cita untuk bisa menggabungkan 
+                keduanya menjadi suatu inovasi yang berguna untuk masyarakat, dan saya akan berusaha untuk mewujudkan impian saya.</p>
+            </div>
+        </section>
+
+        <section id="art">
+            <h2>Art</h2>
+            <div class="card">
+                <pre>
+                    "Cukuplah diammu menjadi sebuah keheningan,
+                    Yang meriuhkan angin dan menggoyangkan dedaunan,
+                    hingga hatimu mennjadi wadah burung yang hinggap,
+                    dan terpantullah bayangan air, 
+                    dari pancaran cahaya senja dikala lara."
+                </pre>
+            </div>
+        </section>
+
+         <section id="contact">
+            <h2>Contact</h2>
+            <div class="card">
+                <p>Email: 4andhyka@gmail.com</p>
+                <p>Instagram: <a href="https://www.instagram.com">Muhandhyka_afr</a></p>
+            </div>
+        </section>
+
+        <footer>
+         <p>See You Again</p>
+        </footer>
+    </body>
+</html>
