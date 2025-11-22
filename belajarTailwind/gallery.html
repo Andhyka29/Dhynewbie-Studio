@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="images/fifalogo.png">
+    <link rel="stylesheet" href="stylecss/style.css">
+  </head>
+
+  <body class="font-sans text-gray-800 bg-gray-100">
+    <!-- HEADER -->
+    <header id="home" class="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center body-gallery">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">GALLERY FIFA</h1>
+        <a href="dashboard.html" class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-medium transition">
+          Back To Home
+        </a>
+      </div>
+    </header>
+  
+    <!-- MAIN -->
+    <main class="px-4 md:px-12 py-10">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold border-b-4 border-red-600 inline-block pb-2">WORLD CUP</h1>
+      </div>
+
+      <!-- Gallery -->
+      <section id="gallery" class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun2022.jpeg" alt="pildun2022" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 2022</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun20218.jpg" alt="pildun2018" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 2018</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun2014.jpg" alt="pildun2014" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 2014</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun2010.jpg" alt="pildun2010" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 2010</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun2002.jpg" alt="pildun2002" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 2002</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun1998.jpeg" alt="pildun1998" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 1998</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun1994.jpeg" alt="pildun1994" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 1994</p>
+        </div>
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="images/pildun1990.jpeg" alt="pildun1990" class="w-full h-40 object-cover rounded-t-lg">
+          <p class="py-2 font-semibold">World Cup 1990</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVBAR -->
+    <nav class="fixed bottom-2 left-1/2 -translate-x-1/2 bg-black/70 text-white rounded-full px-3 py-1.5 flex gap-3 shadow-md text-xs md:px-6 md:py-3 md:gap-6 md:text-base">
+      <a href="dashboard.html" class="hover:text-red-400 transition duration-500">Home</a>
+      <a href="#gallery" class="hover:text-red-400 transition duration-500">Gallery</a>
+      <a href="index.html" class="hover:text-red-400 transition duration-500">Log Out</a>
+    </nav>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 mt-16">
+      <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div>
+          <h3 class="text-lg border-b border-gray-500 inline-block mb-3">Hak Cipta dan Kebijakan</h3>
+          <p class="text-sm">Hak Cipta © 1994 - 2025 FIFA. Semua hak dilindungi undang-undang.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg border-b border-gray-500 inline-block mb-3">Sponsored By</h3>
+          <ul class="space-y-2">
+            <li><a href="https://www.adidas.co.uk/football-shoes" class="hover:text-red-600 transition duration-500">Adidas</a></li>
+            <li><a href="https://www.coca-cola.com/id/id" class="hover:text-red-600 transition duration-500">Coca-Cola</a></li>
+            <li><a href="https://www.hyundaimotorgroup.com/main/mainRecommend" class="hover:text-red-600 transition duration-500">Hyundai</a></li>
+          </ul>
+        </div>
+        
+        <div class="text-center">
+          <a href="https://www.fifa.com/id">
+            <img src="images/logo.png" alt="FIFA" class="h-12 mx-auto mb-3">
+          </a>
+          <p class="text-xs text-gray-400">&copy; 2025 FIFAClub. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
