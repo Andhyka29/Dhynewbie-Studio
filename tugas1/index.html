@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log in</title>
+
+        <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #5df4ff, #08469c); /* agar warnanya gradasi */
+            height: 100vh;   /* ini untuk membuat tinggi body 100% dari tinggi layar */
+            margin: 0;
+            display: flex;   /* ini untuk membuat konten bisa diatur posisinya */   
+            justify-content: center;   /* ini untuk meletakkan konten di tengah dari samping */
+            align-items: center;   /* ini untuk meletakkan konten di tengah dari atas */
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px;   /* ini untuk mebuat jarak dalam konten */
+            border-radius: 15px;   /* ini agar bordernya melengkung */
+            text-align: center;
+            width: 300px;
+            box-shadow: black 2px 2px 8px;   /* ini untuk memberi bayangan */
+        }
+
+        button {
+            width: 100%;   /* ini untuk membuat tombol selebar konten */
+            padding: 12px; 
+            background: #fb0505;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button:hover {
+            background: #982323;
+            transition: 0.6s;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }  
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;   /* ini untuk memberi jarak atas dan bawah */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        </style>
+    </head>
+
+    <body>
+   
+      <div class="login-container">
+            <h1>Selamat Datang</h1>
+            <p>Silakan masuk untuk melanjutkan</p>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button onclick="document.location='dashboard.html'">Login</button>
+            </form>
+
+</body>
+</html>
