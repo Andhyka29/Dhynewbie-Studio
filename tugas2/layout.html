@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    table {
+      width: 1000px;
+      height: 700px;
+      border-collapse: collapse;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      width: 100vh;
+    }
+
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 8px;
+    }
+
+    ul a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 8px;
+      line-height: 3;
+    }
+
+    ul a:hover {
+      color: #f90606;
+      transition: 0.3s;
+    }
+
+  </style>
+</head>
+
+<body>
+  <table border="1">
+    <tr>
+      <td colspan="2" class="header">
+          <h1>My Website</h1>
+      </td>
+    </tr>
+
+    <div class="container">
+    <tr>
+      <td class="nav">
+        <h3 style="text-align: center;">Menu Navigasi</h3>
+          <ul style="list-style:none; padding-left:0;">
+            <li><a href="gambar.html" target="mainframe">Image</a></li>
+            <li><a href="daftar.html" target="mainframe">List</a></li>
+            <li><a href="table.html" target="mainframe">Table</a></li>
+            <li><a href="form.html" target="mainframe">Form</a></li>
+          </ul>
+      </td>
+      <td class="main" width="80%" hight="100%">   
+        <iframe name="mainframe" src="gambar.html" frameborder="0"></iframe> 
+
+      </td>
+    </tr>
+    </div>
+
+    <tr>
+      <td colspan="2" class="footer">
+          Ini bagian footernya
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
