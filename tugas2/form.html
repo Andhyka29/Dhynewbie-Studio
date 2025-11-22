@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pendaftaran</title>
+</head>
+
+<body>
+
+  <div class="login-container">
+  <h2>Form Pendaftaran</h2>
+  <form action="#" method="post">
+    
+    <label for="nama">Nama:</label><br>
+    <input type="text" id="nama" name="nama" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Kata Sandi:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="jk">Jenis Kelamin:</label><br>
+    <select id="jk" name="jk">
+      <option value="">--Pilih--</option>
+      <option value="pria">Pria</option>
+      <option value="wanita">Wanita</option>
+    </select><br><br>
+
+    <label>Status:</label><br>
+    <input type="radio" id="nikah" name="status" value="Nikah">
+    <label for="nikah">Nikah</label><br>
+    <input type="radio" id="belum" name="status" value="Belum Nikah">
+    <label for="belum">Belum Nikah</label><br>
+    <input type="radio" id="cerai" name="status" value="Cerai">
+    <label for="cerai">Cerai</label><br><br>
+
+    <label for="alamat">Alamat:</label><br>
+    <textarea id="alamat" name="alamat" rows="4" cols="30"></textarea><br><br>
+
+    <button type="submit">Daftar</button>
+  </form>
+</body>
+</html>
